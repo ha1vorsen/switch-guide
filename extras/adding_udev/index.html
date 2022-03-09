@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="NH Discord Server.">
-        
+        <link rel="canonical" href="https://nh-server.github.io/switch-guide/extras/adding_udev/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>Linux injection without root - NH Switch Guide</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/darcula.min.css">
         <link href="../../css/custom.css" rel="stylesheet">
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
@@ -79,7 +79,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../blocking_updates/" class="dropdown-item">Blocking Updates</a>
+    <a href="../blocking_nintendo/" class="dropdown-item">Blocking Nintendo servers</a>
 </li>
                                     
 <li>
@@ -107,6 +107,10 @@
 </li>
                                     
 <li>
+    <a href="../cheats/" class="dropdown-item">Game Cheats</a>
+</li>
+                                    
+<li>
     <a href="./" class="dropdown-item active">Linux injection without root</a>
 </li>
                                     
@@ -124,6 +128,10 @@
                                     
 <li>
     <a href="../updating/" class="dropdown-item">Updating CFW</a>
+</li>
+                                    
+<li>
+    <a href="../transfer_sd/" class="dropdown-item">Changing SD cards</a>
 </li>
                                     
 <li>
@@ -146,7 +154,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../game_modding/" class="nav-link">
+                                <a rel="prev" href="../cheats/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -228,7 +236,7 @@
 <h2 id="option-2-installing-a-package-with-the-rules">Option 2: Installing a package with the rules</h2>
 <div class="admonition tip">
 <p class="admonition-title">Note:</p>
-<p>These rules will actually allow <em>ANY</em> user to access your switch via USB, not only <em>your</em> user.</p>
+<p>These rules will actually allow <em>ANY</em> user to access your Switch via USB, not only <em>your</em> user.</p>
 </div>
 <p>You may just follow the instructions at <a href="https://github.com/pheki/nx-udev" target="_blank">nx-udev</a>, or if you're on Ubuntu / Debian:</p>
 <ol>
@@ -243,7 +251,7 @@
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
+                <p>Copyright &copy; 2022 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
@@ -261,16 +269,13 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>

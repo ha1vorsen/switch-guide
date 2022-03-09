@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="NH Discord Server.">
-        
+        <link rel="canonical" href="https://nh-server.github.io/switch-guide/about/">
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>About - NH Switch Guide</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/darcula.min.css">
         <link href="../css/custom.css" rel="stylesheet">
 
         <script src="../js/jquery-1.10.2.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
@@ -79,7 +79,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../extras/blocking_updates/" class="dropdown-item">Blocking Updates</a>
+    <a href="../extras/blocking_nintendo/" class="dropdown-item">Blocking Nintendo servers</a>
 </li>
                                     
 <li>
@@ -107,6 +107,10 @@
 </li>
                                     
 <li>
+    <a href="../extras/cheats/" class="dropdown-item">Game Cheats</a>
+</li>
+                                    
+<li>
     <a href="../extras/adding_udev/" class="dropdown-item">Linux injection without root</a>
 </li>
                                     
@@ -124,6 +128,10 @@
                                     
 <li>
     <a href="../extras/updating/" class="dropdown-item">Updating CFW</a>
+</li>
+                                    
+<li>
+    <a href="../extras/transfer_sd/" class="dropdown-item">Changing SD cards</a>
 </li>
                                     
 <li>
@@ -195,15 +203,13 @@
 <p><a href="https://github.com/nh-server/switch-guide">You can find this guide on GitHub</a>, It is licensed under the <a href="https://github.com/nh-server/switch-guide/blob/master/LICENSE.md">ISC license.</a></p>
 </div>
 <div class="admonition tip">
-<p><img alt="Nintendo Homebrew" src="../img/nh.jpg" /></p>
-</div>
-<div class="admonition tip">
 <p class="admonition-title">Developer / Tool credits</p>
 <ul>
 <li><strong>Atmosphere-NX</strong> for <a href="https://github.com/Atmosphere-NX/Atmosphere">Atmosphere</a>.</li>
 <li><strong>switchbrew</strong> for <a href="https://github.com/switchbrew/nx-hbloader">nx-hbloader</a> and <a href="https://github.com/switchbrew/nx-hbmenu">nx-hbmenu</a>.</li>
 <li><strong>nwert</strong> and <strong>CTCaer</strong> for <a href="https://github.com/CTCaer/hekate">Hekate</a>.</li>
 <li><strong>WerWolv</strong> for <a href="https://github.com/WerWolv/EdiZon/releases">EdiZon</a>.</li>
+<li><strong>J-D-K</strong> for <a href="https://github.com/J-D-K/JKSV">JKSV</a>.</li>
 <li><strong>Flagbrew</strong> for <a href="https://github.com/FlagBrew/Checkpoint">Checkpoint</a>.</li>
 <li><strong>mtheall</strong> for <a href="https://github.com/mtheall/ftpd/">FTPD</a>.</li>
 <li><strong>joel16</strong> for <a href="https://github.com/joel16/NX-Shell">NX-Shell</a>.</li>
@@ -218,14 +224,18 @@
 <li><strong>Nexrem (meganukebmp)</strong> for the <a href="https://github.com/meganukebmp/Switch_90DNS_tester">Switch 90DNS Tester</a>.</li>
 <li><strong>exelix11</strong> for <a href="https://github.com/exelix11/SwitchThemeInjector/releases">Switch Theme Injector</a>.</li>
 <li><strong>vgmoose</strong> for <a href="https://github.com/vgmoose/hb-appstore">hb-appstore</a>.</li>
+<li><strong>suchmememanyskill</strong> for <a href="https://github.com/suchmememanyskill/TegraExplorer">TegraExplorer</a></li>
 </ul>
+</div>
+<div class="admonition tip">
+<p><img alt="Nintendo Homebrew" src="../img/nh.jpg" /></p>
 </div></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
+                <p>Copyright &copy; 2022 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
@@ -243,16 +253,13 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>

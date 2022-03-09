@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="NH Discord Server.">
-        
+        <link rel="canonical" href="https://nh-server.github.io/switch-guide/user_guide/sysnand/making_essential_backups/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>Making Essential Backups and dumping keys - NH Switch Guide</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/darcula.min.css">
         <link href="../../../css/custom.css" rel="stylesheet">
 
         <script src="../../../js/jquery-1.10.2.min.js" defer></script>
         <script src="../../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
@@ -79,7 +79,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../../extras/blocking_updates/" class="dropdown-item">Blocking Updates</a>
+    <a href="../../../extras/blocking_nintendo/" class="dropdown-item">Blocking Nintendo servers</a>
 </li>
                                     
 <li>
@@ -107,6 +107,10 @@
 </li>
                                     
 <li>
+    <a href="../../../extras/cheats/" class="dropdown-item">Game Cheats</a>
+</li>
+                                    
+<li>
     <a href="../../../extras/adding_udev/" class="dropdown-item">Linux injection without root</a>
 </li>
                                     
@@ -124,6 +128,10 @@
                                     
 <li>
     <a href="../../../extras/updating/" class="dropdown-item">Updating CFW</a>
+</li>
+                                    
+<li>
+    <a href="../../../extras/transfer_sd/" class="dropdown-item">Changing SD cards</a>
 </li>
                                     
 <li>
@@ -187,7 +195,7 @@
 <p class="admonition-title">Important</p>
 <p>A NAND backup is crucial. They can be used to restore the device to a working state in case of emergencies.</p>
 <p>Once the backup is finished, <strong>keep it somewhere safe.</strong> The best backup is the one you have but never need, and the worst backup is the one you need but never made. To save space, it's recommended to compress the end-result with a <code>.zip</code> file or something similar.</p>
-<p>It's highly recommended that you use an SD card that is formatted to FAT32 and has at least 32 gigabytes of space free. This will still work on smaller cards, but it's not ideal.</p>
+<p>It's highly recommended that you use an microSD Card that is formatted to FAT32 and has at least 32 gigabytes of space free. This will still work on smaller cards, but it's not ideal.</p>
 </div>
 <h3 id="instructions">Instructions</h3>
 <div class="admonition tip">
@@ -195,22 +203,22 @@
 <li>Enter RCM and inject the Hekate payload</li>
 <li>Use the touch screen to navigate to <code>Tools</code> and then <code>Backup eMMC</code></li>
 <li>Tap on <code>eMMC BOOT0 &amp; BOOT1</code></li>
-<li>This should only take a few seconds, but if your SD card is very slow, it may take around a minute.</li>
+<li>This should only take a few seconds, but if your microSD Card is very slow, it may take around a minute.</li>
 <li>Tap on <code>Close</code> to continue, then tap on <code>eMMC RAW GPP</code></li>
-<li>This will take a long time. Expect it to take between 10 minutes to an hour (or more, if your SD card is very slow).</li>
-<li>On FAT32 SD cards or cards that have less than 32 gigabytes of space available, the NAND will be split into 1 or 2 gigabyte parts.<ul>
+<li>This will take a long time. Expect it to take between 10 minutes to an hour (or more, if your microSD Card is very slow).</li>
+<li>On FAT32 microSD Cards or cards that have less than 32 gigabytes of space available, the NAND will be split into 1 or 2 gigabyte parts.<ul>
 <li>Hekate will stop producing these parts when it runs out of space. When this happens, do the following:</li>
 <li>Power off your system</li>
-<li>Insert your SD card into your PC</li>
-<li>Move all files from the <code>backup</code> folder on your SD card to a safe location on your PC</li>
-<li>Insert your SD card into your Switch</li>
+<li>Insert your microSD Card into your PC</li>
+<li>Move all files from the <code>/backup</code> folder on your microSD Card to a safe location on your PC</li>
+<li>Insert your microSD Card into your Switch</li>
 <li>Enter RCM again, inject Hekate again, and continue the backup by tapping on <code>Tools</code> &gt; <code>Backup eMMC</code> &gt; <code>eMMC RAW GPP</code></li>
 <li>Repeat the process until the NAND is completely dumped</li>
 </ul>
 </li>
 <li>Press <code>Close</code> &gt; <code>Home</code> &gt; <code>Power Off</code></li>
-<li>Insert your SD card into your PC</li>
-<li>Copy the <code>backup</code> folder on your SD card to a safe location on your PC</li>
+<li>Insert your microSD Card into your PC</li>
+<li>Copy the <code>backup</code> folder on your microSD Card to a safe location on your PC</li>
 </ol>
 </div>
 <p>&nbsp;</p>
@@ -225,13 +233,12 @@
 <ol>
 <li>Enter RCM and inject the Hekate payload.</li>
 <li>Tap the <code>Payloads</code> option, then press Lockpick_RCM.bin.</li>
-<li>If Lockpick_RCM asks you to select between SysNAND and emuMMC, choose SysNAND by navigating with the volume buttons and pressing the power button. If not, continue with step 4.</li>
-<li>If Lockpick_RCM prompts you to <code>Reboot to Sept</code>, press power or either volume button to do so. A "sept by Atmosphere" logo will then display, followed by Lockpick_RCM starting again. If it does <em>not</em> prompt you, continue on to step 5.</li>
-<li>Lockpick_RCM should now inform you that your keys have been saved to <code>/switch/prod.keys</code> on the SD card.</li>
+<li>If Lockpick_RCM asks you to select between SysNAND and EmuNAND, choose SysNAND by navigating with the volume buttons and pressing the power button. If not, continue with step 4.</li>
+<li>Lockpick_RCM should now inform you that your keys have been saved to <code>/switch/prod.keys</code> on the microSD Card.</li>
 <li>Press any button to return to the main menu.</li>
 <li>Navigate to 'Power off' with the volume buttons and select it with the power button.</li>
-<li>Insert your SD card into your PC.</li>
-<li>Copy <code>prod.keys</code> from the <code>switch</code> folder on your SD card to a safe location on your PC (it is suggested to copy it to the same place that you copied your NAND backup to).</li>
+<li>Insert your microSD Card into your PC.</li>
+<li>Copy <code>prod.keys</code> from the <code>switch</code> folder on your microSD Card to a safe location on your PC (it is suggested to copy it to the same place that you copied your NAND backup to).</li>
 </ol>
 </div>
 <p>&nbsp;</p>
@@ -241,7 +248,7 @@
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
+                <p>Copyright &copy; 2022 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
@@ -259,16 +266,13 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>

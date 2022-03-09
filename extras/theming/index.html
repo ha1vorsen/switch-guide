@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="NH Discord Server.">
-        
+        <link rel="canonical" href="https://nh-server.github.io/switch-guide/extras/theming/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>Theming - NH Switch Guide</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/darcula.min.css">
         <link href="../../css/custom.css" rel="stylesheet">
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
@@ -79,7 +79,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../blocking_updates/" class="dropdown-item">Blocking Updates</a>
+    <a href="../blocking_nintendo/" class="dropdown-item">Blocking Nintendo servers</a>
 </li>
                                     
 <li>
@@ -107,6 +107,10 @@
 </li>
                                     
 <li>
+    <a href="../cheats/" class="dropdown-item">Game Cheats</a>
+</li>
+                                    
+<li>
     <a href="../adding_udev/" class="dropdown-item">Linux injection without root</a>
 </li>
                                     
@@ -124,6 +128,10 @@
                                     
 <li>
     <a href="../updating/" class="dropdown-item">Updating CFW</a>
+</li>
+                                    
+<li>
+    <a href="../transfer_sd/" class="dropdown-item">Changing SD cards</a>
 </li>
                                     
 <li>
@@ -179,7 +187,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#making-a-theme-mac-linux" class="nav-link">Making a theme (Mac / Linux)</a>
+            <li class="nav-item" data-level="2"><a href="#making-a-theme-mac-linux-chrome-os" class="nav-link">Making a theme (Mac / Linux / Chrome OS)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -224,14 +232,14 @@ n if you want to install a custom font</p>
 </ul>
 <h3 id="making-the-theme">Making the theme</h3>
 <ol>
-<li>Unzip <code>ReleaseVx.x.zip</code> to somewhere on your pc's drive.</li>
+<li>Unzip <code>ReleaseVx.x.zip</code> to somewhere on your PC's drive.</li>
 <li>Open up the <code>SwitchThemes.exe</code> app. Navigate to <code>NXTheme Builder</code>.</li>
 <li>Select a Home menu part, A 720p image and a Layout patch. Click on <code>Build NXTheme</code> after selecting your home menu part, image and layout patch.</li>
 <li>Fill out the details in the window that pops up. After filling out this window and clicking ok, you will get asked where to save the NXTheme file. Save this file to a temporary folder.</li>
 <li>Repeat step 3 and 4 for every Home Menu part of the Switch you want to modify.</li>
 </ol>
 <p>&nbsp;</p>
-<h2 id="making-a-theme-mac-linux">Making a theme (Mac / Linux)</h2>
+<h2 id="making-a-theme-mac-linux-chrome-os">Making a theme (Mac / Linux / Chrome OS)</h2>
 <h3 id="making-the-theme_1">Making the theme</h3>
 <p>Make sure that the images you want to use are 1280x720 and in JPG!</p>
 <ol>
@@ -252,14 +260,14 @@ n if you want to install a custom font</p>
 <p>If you want to use the homebrew app store for themes, you can simply install the theme you want via the appstore, and follow the instructions from step 2 onwards below.</p>
 </div>
 <ol>
-<li>Copy the <code>.nxtheme</code> files to the <code>themes</code> folder on your sd card (It is recommended you put them into their own folders, e.g. /themes/awesome_theme/awesome.nxtheme).<ul>
-<li>Create the <code>themes</code> folder on the root of your sd card if it does not exist.
+<li>Copy the <code>.nxtheme</code> files to the <code>/themes</code> folder on your microSD Card (It is recommended you put them into their own folders, e.g. /themes/awesome_theme/awesome.nxtheme).<ul>
+<li>Create the <code>/themes</code> folder on the root of your microSD Card if it does not exist.
 &nbsp;</li>
 </ul>
 </li>
 <li>Boot Switch CFW, launch the Homebrew Menu and launch <code>NXThemes Installer</code>.</li>
 <li>Your theme files should be listed here. You can install them one by one.</li>
-<li>Reboot your switch to see the changes.</li>
+<li>Reboot your Switch to see the changes.</li>
 </ol>
 <p>&nbsp;</p>
 <h2 id="installing-a-custom-font">Installing a custom font</h2>
@@ -267,24 +275,25 @@ n if you want to install a custom font</p>
 <li>Put a font in the .ttf file format into the <code>themes</code> folder (It is recommended you put them into their own folders, e.g. /themes/cool_font/font.ttf).</li>
 <li>Boot Switch CFW, launch the Homebrew Menu and launch <code>NXThemes Installer</code>.</li>
 <li>Find your font and install it.</li>
-<li>Reboot your switch to see the changes.</li>
+<li>Reboot your Switch to see the changes.</li>
 </ol>
 <p>&nbsp;</p>
 <h2 id="troubleshooting">Troubleshooting:</h2>
 <p>My Switch crashes on boot after I installed a theme!:</p>
 <ul>
-<li>You installed a bad theme. You can remove it by going into the <code>/atmosphere/titles/0100000000001000/romfs/lyt</code> and deleting every file in that folder.</li>
+<li>You installed a bad theme. You can remove it by going into the <code>/atmosphere/contents/0100000000001000/romfs/lyt</code> and deleting every file in that folder.</li>
+<li>Note: <code>contents</code> is called <code>titles</code> on Atmosphere versions 0.9.4 and below</li>
 </ul>
 <p>The NXTheme installer crashes when I launch it:</p>
 <ul>
-<li>This is probably due to the archive bit being set on either the app or the nxthemes. This is usually the result of copying files to an sd card via a Mac. If you are experiencing this issue, try resetting the archive bit via Hekate for all files.</li>
+<li>This is probably due to the archive bit being set on either the app or the nxthemes. This is usually the result of copying files to an microSD Card via a Mac. If you are experiencing this issue, try resetting the archive bit via Hekate for all files.</li>
 </ul></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
+                <p>Copyright &copy; 2022 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
@@ -302,16 +311,13 @@ n if you want to install a custom font</p>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>

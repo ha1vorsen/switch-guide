@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Switch CFW Guide.">
         <meta name="author" content="NH Discord Server.">
-        
+        <link rel="canonical" href="https://nh-server.github.io/switch-guide/">
         <link rel="shortcut icon" href="img/favicon.ico">
         <title>NH Switch Guide</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/darcula.min.css">
         <link href="css/custom.css" rel="stylesheet">
 
         <script src="js/jquery-1.10.2.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
@@ -79,7 +79,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="extras/blocking_updates/" class="dropdown-item">Blocking Updates</a>
+    <a href="extras/blocking_nintendo/" class="dropdown-item">Blocking Nintendo servers</a>
 </li>
                                     
 <li>
@@ -107,6 +107,10 @@
 </li>
                                     
 <li>
+    <a href="extras/cheats/" class="dropdown-item">Game Cheats</a>
+</li>
+                                    
+<li>
     <a href="extras/adding_udev/" class="dropdown-item">Linux injection without root</a>
 </li>
                                     
@@ -124,6 +128,10 @@
                                     
 <li>
     <a href="extras/updating/" class="dropdown-item">Updating CFW</a>
+</li>
+                                    
+<li>
+    <a href="extras/transfer_sd/" class="dropdown-item">Changing SD cards</a>
 </li>
                                     
 <li>
@@ -194,13 +202,13 @@
 <div class="admonition tip">
 <p>Homebrew is a term for unoffical software written by hobbyists and amateur developers for locked down systems (i.e. the Switch).</p>
 <p>This can include save editing tools, games, emulators, and more.</p>
-<p>Homebrew can be run for free on your Switch through Custom Firmware as long as you have a "first-generation" system running 10.1.0 or lower, and a USB-C cable.</p>
+<p>Homebrew can be run for free on your Switch through Custom Firmware as long as you have a "first-generation" system running 13.2.1 or lower, and a USB-C cable.</p>
 </div>
 <h3 id="what-is-custom-firmware">What is Custom Firmware?</h3>
 <div class="admonition tip">
-<p>Custom Firmware (“CFW”) is a piece software that modifies the system firmware.
-Atmosphere, for example, does this by running in the background and patching the OS "on the fly".</p>
-<p>This allows one to extend the functionality of their system by giving homebrew higher levels of permission than most userland exploits and can be used to provide extra services and features for homebrew devs and users to take advantage of for different purposes, for instance, game modding using LayeredFS.</p>
+<p>Custom Firmware (“CFW”) is a piece of software that modifies the system firmware.
+Atmosphere, for example, does this by running in the background and patching the OS on the fly.</p>
+<p>This allows one to extend the functionality of their system by giving homebrew higher levels of permission than most userland exploits and can be used to provide extra features for homebrew devs and users to take advantage of for various purposes, for instance, game modding using LayeredFS.</p>
 <p>CFW can be set up on any first-generation console on any version (but will require additional tools).</p>
 </div>
 <h3 id="what-does-this-guide-install">What does this guide install?</h3>
@@ -221,22 +229,21 @@ Atmosphere, for example, does this by running in the background and patching the
 <h3 id="what-do-i-need-to-know-before-starting">What do I need to know before starting?</h3>
 <div class="admonition tip">
 <p>Before beginning the guide, you must know the risks of Switch hacking: EVERY time you modify your system, there is always the potential for an UNRECOVERABLE brick. They’re rare but still a possibility so make sure you follow ALL directions EXACTLY.</p>
-<p>This guide will work on first-generation Switch consoles in all regions on firmware 10.1.0 or below.</p>
-<p>You will need one of the following in order to successfully follow this guide:</p>
+<p>This guide will work on first-generation Switch consoles in all regions on firmware 13.2.1 or below.</p>
+<p>You will need <strong>one</strong> of the following in order to successfully follow this guide:</p>
 <ul>
-<li>A USB-A to USB-C cable, and a PC</li>
-<li>A USB-OTG cable, a USB-A to USB-C cable, and an Android device<ul>
+<li>A PC and a USB cable capable of data transfer between your Switch and your PC</li>
+<li>An Android device and a USB cable capable of data transfer between your Switch and your Android device<ul>
 <li>This does not work on every android phone</li>
 </ul>
 </li>
-<li>A USB-C cable, and an Android device with a USB-C port</li>
-<li>A Lightning to USB-C cable, and a jailbroken iOS device<ul>
+<li>A Lightning-OTG adapter, a jailbroken iOS device and a USB cable capable of data transfer between your Switch and the adapter<ul>
 <li>This method is not covered by the guide, but you can read more about it at <a href="https://mologie.github.io/nxboot/">this website</a></li>
 </ul>
 </li>
-<li>A way to access Recovery Mode. (This will be further explained in the "Entering RCM section")</li>
 </ul>
-<p>You will also need a micro SD card that is at least 64 gigabytes or larger if you plan on following this guide through the emummc path, which is safer and strongly recommended. If you must use a smaller SD card, it is possible with the sysmmc path, but strongly not recommended.</p>
+<p>You will also need a microSD Card that is at least 64 gigabytes or larger if you plan on following this guide through the emuMMC path, which is safer and strongly recommended. If you must use a smaller microSD Card, it is possible with the sysMMC path, but strongly not recommended.</p>
+<p>Finally, you will need a way to access Recovery Mode. (This will be further explained in the "Entering RCM section")</p>
 </div>
 <p>If everything goes according to plan, you will lose no data and end up with everything that you started with (games, Nintendo Account, saves, etc will be preserved).</p>
 <p>Keep your device plugged in and charged throughout the entire process to avoid data loss or damage from an unexpected power-off.</p>
@@ -249,7 +256,7 @@ Atmosphere, for example, does this by running in the background and patching the
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
+                <p>Copyright &copy; 2022 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
@@ -267,16 +274,13 @@ Atmosphere, for example, does this by running in the background and patching the
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>
@@ -327,6 +331,6 @@ Atmosphere, for example, does this by running in the background and patching the
 </html>
 
 <!--
-MkDocs version : 1.1.2
-Build Date UTC : 2020-07-15 22:01:46.906004+00:00
+MkDocs version : 1.2.3
+Build Date UTC : 2022-03-09 23:44:21.880573+00:00
 -->

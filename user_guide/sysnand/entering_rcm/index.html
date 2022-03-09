@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="NH Discord Server.">
-        
+        <link rel="canonical" href="https://nh-server.github.io/switch-guide/user_guide/sysnand/entering_rcm/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>Entering RCM - NH Switch Guide</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/darcula.min.css">
         <link href="../../../css/custom.css" rel="stylesheet">
 
         <script src="../../../js/jquery-1.10.2.min.js" defer></script>
         <script src="../../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
@@ -79,7 +79,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../../extras/blocking_updates/" class="dropdown-item">Blocking Updates</a>
+    <a href="../../../extras/blocking_nintendo/" class="dropdown-item">Blocking Nintendo servers</a>
 </li>
                                     
 <li>
@@ -107,6 +107,10 @@
 </li>
                                     
 <li>
+    <a href="../../../extras/cheats/" class="dropdown-item">Game Cheats</a>
+</li>
+                                    
+<li>
     <a href="../../../extras/adding_udev/" class="dropdown-item">Linux injection without root</a>
 </li>
                                     
@@ -124,6 +128,10 @@
                                     
 <li>
     <a href="../../../extras/updating/" class="dropdown-item">Updating CFW</a>
+</li>
+                                    
+<li>
+    <a href="../../../extras/transfer_sd/" class="dropdown-item">Changing SD cards</a>
 </li>
                                     
 <li>
@@ -199,10 +207,9 @@
     <summary>Click to expand!</summary></p>
 <div class="admonition snippet">
 <p class="admonition-title">Note</p>
-<p>Some jig designs use paperclips, inheriting the same risks as the Metal Bridge / Paperclip method. If you would like a safe jig design, we highly recommend <a href="https://switchjigs.com">switchjigs.com</a>.</p>
+<p>Some jig designs use paperclips, inheriting the same risks as the Metal Bridge / Paperclip method.</p>
 </div>
 <p>This method is similar to the Metal Bridge / Paperclip method, but is more reliable and safer in many cases. Jigs hold a wire in place so the correct pins (10 and a ground) are shorted every time.</p>
-<p>Jigs range in price, with the ones we recommend being $5. They're slightly more expensive than some mass produced jigs, however we can guarantee their quality. Also spending $5 on a quality jig using 32-gauge wire is a smaller cost than replacing your entire Joy-Con rail after the pins are scratched off by a paperclip jig.</p>
 <div class="admonition tip">
 <p><img alt="switchjigs.com jigs" src="../../img/entering_rcm_jig.jpg" /></p>
 </div>
@@ -210,9 +217,9 @@
 <div class="admonition tip">
 <p><img alt="Console Numbered Pads Refrence" src="../../img/entering_rcm_pads_numbered.jpg" /></p>
 </div>
+<p>Please note that once you have successfully entered RCM, you can take the jig out of the joycon rail.</p>
 </div>
 </details>
-
 <div class="admonition tip">
 <h3 id="soldered-joy-con-pads-physical-rcm-button-safest">Soldered Joy-Con Pads - Physical RCM Button (Safest)</h3>
 <p><details>
@@ -247,7 +254,6 @@
 </div>
 </div>
 </details>
-
 <div class="admonition tip">
 <h3 id="soldered-joy-con-pads-7-10">Soldered Joy-Con Pads - 7 &amp; 10</h3>
 <p><details>
@@ -266,7 +272,6 @@
 </div>
 </div>
 </details>
-
 <div class="admonition tip">
 <h3 id="soldered-joy-con-pads-9-10">Soldered Joy-Con Pads - 9 &amp; 10</h3>
 <p><details>
@@ -289,7 +294,6 @@
 </div>
 </div>
 </details>
-
 <div class="admonition tip">
 <h3 id="bent-joy-con-pins-not-recommended">Bent Joy-Con Pins (Not recommended)</h3>
 <p><details>
@@ -312,7 +316,6 @@
 </div>
 </div>
 </details>
-
 <p>&nbsp;</p>
 <h4 id="continue-to-sending-a-payload"><a href="../sending_payload/">Continue to Sending a Payload <i class="fa fa-arrow-circle-right fa-lg"></i></a></h4></div>
             </div>
@@ -320,7 +323,7 @@
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
+                <p>Copyright &copy; 2022 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
@@ -338,16 +341,13 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>

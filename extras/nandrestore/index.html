@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="NH Discord Server.">
-        
+        <link rel="canonical" href="https://nh-server.github.io/switch-guide/extras/nandrestore/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>Restoring a NAND Backup - NH Switch Guide</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/darcula.min.css">
         <link href="../../css/custom.css" rel="stylesheet">
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
@@ -79,7 +79,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../blocking_updates/" class="dropdown-item">Blocking Updates</a>
+    <a href="../blocking_nintendo/" class="dropdown-item">Blocking Nintendo servers</a>
 </li>
                                     
 <li>
@@ -107,6 +107,10 @@
 </li>
                                     
 <li>
+    <a href="../cheats/" class="dropdown-item">Game Cheats</a>
+</li>
+                                    
+<li>
     <a href="../adding_udev/" class="dropdown-item">Linux injection without root</a>
 </li>
                                     
@@ -124,6 +128,10 @@
                                     
 <li>
     <a href="../updating/" class="dropdown-item">Updating CFW</a>
+</li>
+                                    
+<li>
+    <a href="../transfer_sd/" class="dropdown-item">Changing SD cards</a>
 </li>
                                     
 <li>
@@ -146,7 +154,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../blocking_updates/" class="nav-link">
+                                <a rel="prev" href="../blocking_nintendo/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -173,7 +181,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#restore-a-nand-backup-to-the-switch" class="nav-link">Restore a NAND backup to the switch</a>
+            <li class="nav-item" data-level="2"><a href="#restore-a-nand-backup-to-the-switch" class="nav-link">Restore a NAND backup to the Switch</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -182,47 +190,48 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="restore-a-nand-backup-to-the-switch">Restore a NAND backup to the switch</h2>
+<h2 id="restore-a-nand-backup-to-the-switch">Restore a NAND backup to the Switch</h2>
 <div class="admonition danger">
 <p class="admonition-title">Warning:</p>
-<p>-This will reset all of your saves, games, system version and other system settings back to a point when you made the the nand backup. Keep this in mind, as you probably don't have to restore a nand backup unless you have bricked your switch or want to go back online safely after using cfw.</p>
+<p>-This will reset all of your saves, games, system version and other system settings back to the point when you made the NAND backup. Keep this in mind, as you probably don't have to restore a NAND backup unless you have bricked your Switch or want to go back online safely after using CFW.</p>
 <p>-If you're going to restore an old NAND which will downgrade your firmware it's best to create a second NAND backup before restoring the first one in case something goes wrong.</p>
 </div>
 <h3 id="what-you-need">What you need:</h3>
 <ul>
-<li>Your <code>rawnand.bin</code> (Combined or in 15 or 30 parts)</li>
+<li>Your <code>rawnand.bin</code> (combined or in 15 or 30 parts)</li>
 <li>Your <code>BOOT0</code> and <code>BOOT1</code><ul>
 <li>If you're missing any of the files above, ask for further help in the <a href="https://discord.gg/C29hYvh">Nintendo Homebrew</a> Discord server.</li>
 </ul>
 </li>
 <li>The <a href="https://github.com/CTCaer/hekate/releases/" target="_blank">Hekate</a> Payload</li>
-<li>A microSD card larger than 32gb</li>
+<li>A microSD Card larger than 32GB</li>
 </ul>
 <h3 id="instructions">Instructions:</h3>
-<p>Before we start, check if you have a tree of folders called <code>backup/[8 Character NAND id]/restore</code> on your sd card.</p>
+<p>Before we start, check if you have a tree of folders called <code>backup/[8 Character NAND id]/restore</code> on your microSD Card.</p>
 <div class="admonition warning">
-<p class="admonition-title">If you don't see a backup or [8 Character NAND id] folder on your sd card:</p>
-<p>This means you do not have a nand backup, it is highly reccomended you make one as soon as possible. Follow the steps below to make one.</p>
+<p class="admonition-title">If you don't see a backup or [8 Character NAND id] folder on your microSD Card:</p>
+<p>This means you do not have a NAND backup, it is highly recommended you make one as soon as possible. Follow the steps below to make one.</p>
 <ol>
-<li>Launch the latest Hekate payload on your switch.</li>
-<li>Navigate to <code>Tools &gt; Backup eMMC &gt; eMMC BOOT0 &amp; BOOT1</code> and let it do its thing.</li>
-<li>Wait for the process to complete. When it's completed, you now have a <code>backup/[8 Character NAND id]/restore</code> folder on your sd card. Continue with step 1 of the guide.</li>
+<li>Inject the latest Hekate payload to your Switch.</li>
+<li>Navigate to <code>Tools &gt; Backup eMMC &gt; eMMC BOOT0 &amp; BOOT1</code> and let the task complete.</li>
+<li>Once it's completed, you'll now have a <code>backup/[8 Character NAND id]/restore</code> folder on your microSD Card. Continue with Step 1 of the guide.</li>
 </ol>
 </div>
 <ol>
-<li>Copy your <code>rawnand.bin</code> (combined or in 15 or 30 parts, this can be done by using the joiner scripts on the hekate github release page), <code>BOOT0</code>, and <code>BOOT1</code> to the     <code>backup/[8 Character NAND id]/restore</code> folder on the sd card.</li>
-<li>Put your sd card into your switch, and launch Hekate.</li>
+<li>Copy your <code>rawnand.bin</code>, <code>BOOT0</code>, and <code>BOOT1</code> to the     <code>backup/[8 Character NAND id]/restore</code> folder on the microSD Card.
+    • The <code>rawnand.bin</code> might instead be split into many small <code>rawnand.bin.xx</code> files, where <code>xx</code> will be a number. Place <strong>all of these</strong> in the restore folder mentioned above.</li>
+<li>Put your microSD Card into your Switch, and launch Hekate.</li>
 <li>Navigate to <code>Tools &gt; Restore eMMC</code>. Select <code>Restore eMMC BOOT0 &amp; BOOT1</code>. Wait for this process to complete.</li>
 <li>In that same menu, select <code>eMMC RAW GPP</code> and wait for the process to complete. This will take a very long time to complete.</li>
 </ol>
 <div class="admonition danger">
 <p class="admonition-title">If you're downgrading using your NAND backup</p>
-<p>If the security version you were on before you performed the NAND restore is HIGHER than the NAND backup itself, you have to enable autoRCM to not get stuck in a boot crash.
-A system update is considered a security version when a fuse is burned, you can check <strong><a href="https://switchbrew.org/wiki/Fuses#Anti-downgrade" target=blank>which versions burn fuses here</a></strong>.</p>
-<p>If you were in autorcm before you upgraded to a newer security version (and still were after the upgrade) you don't have to do this.</p>
+<p>If the security revision you were on before you performed the NAND restore is HIGHER than the NAND backup itself, you have to enable autoRCM to not get stuck in a crash on boot.
+A system update is considered a security revision when a fuse is burned. You can check <strong><a href="https://switchbrew.org/wiki/Fuses#Anti-downgrade" target=blank>which versions burn fuses here</a></strong>.</p>
+<p>If no fuses were burnt between the NAND backup you are restoring, and the Switch's current version, you can ignore this.</p>
 <ol>
-<li>In Hekate's main menu, navigate to <code>Tools</code> and go to the bottom of the page where you will find a button called <code>Archive bit - AutoRCM</code></li>
-<li>Select the <code>AutoRCM</code> buttom and you will see <code>ON</code> written next to it. This means it is enabled.</li>
+<li>In Hekate's main menu, navigate to <code>Tools</code> and go to the bottom of the page where you will find a button called <code>Archive bit - autoRCM</code></li>
+<li>Select the <code>autoRCM</code> button, and you will see <code>ON</code> written next to it. This means AutoRCM is enabled.</li>
 </ol>
 </div></div>
             </div>
@@ -230,7 +239,7 @@ A system update is considered a security version when a fuse is burned, you can 
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
+                <p>Copyright &copy; 2022 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
@@ -248,16 +257,13 @@ A system update is considered a security version when a fuse is burned, you can 
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>

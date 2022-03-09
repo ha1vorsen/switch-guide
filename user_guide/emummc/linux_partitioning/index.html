@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="NH Discord Server.">
-        
+        <link rel="canonical" href="https://nh-server.github.io/switch-guide/user_guide/emummc/linux_partitioning/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>Linux partitioning - NH Switch Guide</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/darcula.min.css">
         <link href="../../../css/custom.css" rel="stylesheet">
 
         <script src="../../../js/jquery-1.10.2.min.js" defer></script>
         <script src="../../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
@@ -79,7 +79,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../../extras/blocking_updates/" class="dropdown-item">Blocking Updates</a>
+    <a href="../../../extras/blocking_nintendo/" class="dropdown-item">Blocking Nintendo servers</a>
 </li>
                                     
 <li>
@@ -107,6 +107,10 @@
 </li>
                                     
 <li>
+    <a href="../../../extras/cheats/" class="dropdown-item">Game Cheats</a>
+</li>
+                                    
+<li>
     <a href="../../../extras/adding_udev/" class="dropdown-item">Linux injection without root</a>
 </li>
                                     
@@ -124,6 +128,10 @@
                                     
 <li>
     <a href="../../../extras/updating/" class="dropdown-item">Updating CFW</a>
+</li>
+                                    
+<li>
+    <a href="../../../extras/transfer_sd/" class="dropdown-item">Changing SD cards</a>
 </li>
                                     
 <li>
@@ -174,8 +182,8 @@
 
 <h2 id="manual-linux-preperations">Manual Linux Preperations</h2>
 <div class="admonition danger">
-<p class="admonition-title">SD card identification</p>
-<p>Make 100% sure you get your microSD card during the following steps. If you are not careful, you can end up wiping your entire linux filesystem. We are not responsible for data loss when doing this.</p>
+<p class="admonition-title">microSD Card identification</p>
+<p>Make 100% sure you get your microSD Card during the following steps. If you are not careful, you can end up wiping your entire linux filesystem. We are not responsible for data loss when doing this.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Who is this for?</p>
@@ -192,9 +200,9 @@
 <h3 id="manual-instructions-linux">Manual instructions (Linux)</h3>
 <ol>
 <li>Open a terminal.</li>
-<li>Run <code>sudo fdisk -l</code>. Enter your password if prompted. This will print information about all drives connected to your computer. Use the information about the file size to identify your microSD card. Specifically, take note of the line after <code>Disk</code>. This will look something like <code>/dev/xxx</code>, where <code>xxx</code> will differ on your system (can also be longer than three characters). It does NOT end with a number.</li>
+<li>Run <code>sudo fdisk -l</code>. Enter your password if prompted. This will print information about all drives connected to your computer. Use the information about the file size to identify your microSD Card. Specifically, take note of the line after <code>Disk</code>. This will look something like <code>/dev/xxx</code>, where <code>xxx</code> will differ on your system (can also be longer than three characters). It does NOT end with a number.</li>
 <li>Run <code>sudo gparted &lt;value&gt;</code>. Enter your password if prompted. Replace <code>&lt;value&gt;</code> in the command with the information you obtained from step 2.</li>
-<li>You will see a list of partitions on your SD card. Go to <code>Device</code> -&gt; <code>Create partition table</code>. Select <code>msdos</code> as the partition type and select Apply. This will remove all existing partitions from your SD card.</li>
+<li>You will see a list of partitions on your microSD Card. Go to <code>Device</code> -&gt; <code>Create partition table</code>. Select <code>msdos</code> as the partition type and select Apply. This will remove all existing partitions from your microSD Card.</li>
 <li>
 <p>Go to <code>Partition</code> -&gt; <code>New</code>. And do the following:</p>
 <ul>
@@ -222,9 +230,9 @@
 <p>To fix this, follow these instructions:</p>
 <ol>
 <li>Open a terminal.</li>
-<li>Run <code>sudo fdisk -l</code>. Enter your password if prompted. This will print information about all drives connected to your computer. Use this information to determine the FAT32 partition on your SD card. Specifically, note the value under the column <code>Device</code>. This will look something like <code>/dev/xxx</code>, where <code>xxx</code> will differ on your system (can also be longer than three characters). It always ends with a number!</li>
+<li>Run <code>sudo fdisk -l</code>. Enter your password if prompted. This will print information about all drives connected to your computer. Use this information to determine the FAT32 partition on your microSD Card. Specifically, note the value under the column <code>Device</code>. This will look something like <code>/dev/xxx</code>, where <code>xxx</code> will differ on your system (can also be longer than three characters). It always ends with a number!</li>
 <li>Run <code>sudo mkdosfs &lt;value&gt; -s 64 -F 32 -I</code>. Enter your password if prompted. Replace <code>&lt;value&gt;</code> with the value you got from step 2.</li>
-<li>Wait until it finishes running. Depending on the size of your microSD card, this might take a while.</li>
+<li>Wait until it finishes running. Depending on the size of your microSD Card, this might take a while.</li>
 <li>Run <code>sudo fatlabel &lt;value&gt; "sMicroSD"</code>. Enter your password if prompted. Replace <code>&lt;value&gt;</code> with the value you got from step 2.</li>
 </ol>
 </div>
@@ -235,7 +243,7 @@
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
+                <p>Copyright &copy; 2022 <a href="https://discord.gg/C29hYvh" target="_blank">Nintendo Homebrew</a>, Maintained by the <a href="/switch-guide/about">NH Discord Server</a>.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
@@ -253,16 +261,13 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>
